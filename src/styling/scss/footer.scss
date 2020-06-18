@@ -1,0 +1,18 @@
+.footer-info {
+    background-color: $dark-gray;
+    display: flex;
+    justify-content: space-evenly;
+    color: $white;
+    padding: 20px;
+
+    p {
+        color: $light-gray;
+    }
+}
+
+.copyright {
+    text-align: center;
+    padding: 20px;
+    background-color: $main-green;
+    color: $light-gray;
+}
