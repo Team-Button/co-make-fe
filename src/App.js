@@ -1,14 +1,12 @@
 import React from 'react';
+import { Switch, Route } from 'react-router-dom';
+import { Login } from './pages';
 
-import { Footer } from './components'
-
-import './styling/css/styles.css'
-
+import './styling/css/styles.css';
 function App() {
   return (
     <div>
-      <p>Something</p>
-      <Footer />
+      <Login />
     </div>
   );
 }
