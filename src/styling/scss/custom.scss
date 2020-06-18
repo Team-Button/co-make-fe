@@ -1,0 +1,20 @@
+h5 {
+    font-style: bolder;
+}
+
+header{
+    h1 {
+        font-size: 3.6rem;
+        font-family: $special-font;
+        font-style: bolder;
+        color: $main-green;
+    }
+}
+
+.login-form{
+    max-width: 350px;
+}
+.copyright {
+    text-align: center;
+    color: $light-gray;
+}
