@@ -1,12 +1,10 @@
 import React from 'react'
-import { LoginHeader, LoginForm, Footer } from '../components'
+import { Footer } from '../components'
 
-export function Login() {
+export function Register() {
     return (
         <>
             <div className="container-sm">
-                <LoginHeader />
-                <LoginForm />
             </div>
             <Footer />
         </>
