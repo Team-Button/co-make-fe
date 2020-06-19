@@ -1,4 +1,6 @@
 export * from './footer/Footer'
+export * from './navbar/NavBar'
+export * from './layout/Layout'
 
 export * from './login/LoginHeader'
 export * from './login/LoginForm'
