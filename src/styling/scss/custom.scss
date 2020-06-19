@@ -6,12 +6,30 @@ header{
     h1 {
         font-size: 3.6rem;
         font-family: $special-font;
-        font-style: bolder;
+        font-weight: bolder;
         color: $main-green;
     }
 }
 
-.login-form{
+.register{
+    min-height: 85vh;
+}
+
+.counity-signup{
+    color: $main-green;
+    font-weight: bolder;
+}
+
+.counity-name{
+    font-size: 3.6rem;
+    font-family: $special-font
+}
+
+.create-profile{
+    font-size: 1.5rem;
+}
+
+.login-form, .register-form{
     max-width: 350px;
 }
 .copyright {

@@ -1,13 +1,16 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import { Login } from './pages';
+import { Login, Register } from './pages';
 
 import './styling/css/styles.css';
 function App() {
   return (
-    <div>
-      <Login />
-    </div>
+    <>
+    <Switch>
+      <Route exact path={["/","/login"]} component={Login}/>
+      <Route path="/register" component={Register} />
+    </Switch>
+    </>
   );
 }
 

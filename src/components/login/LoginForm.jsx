@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export function LoginForm() {
     return (
@@ -20,7 +21,7 @@ export function LoginForm() {
                 <button className="login-submit btn btn-primary m-3 pl-5 pr-5">Login</button>
                 </div>
             </form>
-            <p className="text-center">Don't have an account? Create a new one here</p>
+            <p className="text-center"><Link to="register">Don't have an account? Create a new one here</Link></p>
         </div>
     )
 }
