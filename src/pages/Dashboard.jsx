@@ -1,12 +1,13 @@
-import React from 'react'
-import { Layout } from '../components'
+import React from "react";
+import { Layout, Links, Posts } from "../components";
 
 export function Dashboard() {
-    return (
-        <>
-            <Layout>
-                Hello
-            </Layout>
-        </>
-    )
+  return (
+    <>
+      <Layout>
+        <Links />
+        <Posts />
+      </Layout>
+    </>
+  );
 }
