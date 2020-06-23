@@ -4,12 +4,12 @@ import App from "./App";
 import { BrowserRouter as Router } from "react-router-dom";
 import * as serviceWorker from "./serviceWorker";
 import { createStore, applyMiddleware } from "redux";
-import appReducer from "./reducers";
+import { Reducers } from "./redux/reducers";
 import { Provider } from "react-redux";
 import thunk from "redux-thunk";
 import { logger } from "redux-logger";
 
-const store = createStore(appReducer, applyMiddleware(thunk, logger));
+const store = createStore(Reducers, applyMiddleware(thunk, logger));
 
 ReactDOM.render(
   <Provider store={store}>

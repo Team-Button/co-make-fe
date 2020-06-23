@@ -1,42 +1,44 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { postLogin } from "../../actions";
+import { postLogin } from "../../redux/actions";
+import { useForm } from "react-hook-form";
+import { ErrorMessage, PasswordError } from "./ErrorMessage";
 
-export function LoginForm() {
-  const [credentials, setCredentials] = useState({
-    username: "",
-    password: "",
-  });
+export function LoginForm(props) {
+  const { register, errors, handleSubmit } = useForm();
+  const dispatch = useDispatch();
 
-  const handleChange = (e) => {
-    setCredentials({ ...credentials, [e.target.name]: e.target.value });
+  const onSubmit = (values) => {
+    dispatch(postLogin({ props, values }));
   };
-
-  const handleSubmit = (e) => {};
 
   return (
     <div className="login-page">
-      <form className="login-form mx-auto" onSubmit={handleSubmit}>
+      <form className="login-form mx-auto" onSubmit={handleSubmit(onSubmit)}>
         <div className="form-group d-flex flex-column justify-content-center align-items-center">
-          <label for="username">Username</label>
+          <label htmlFor="username">Username</label>
           <input
             name="username"
             id="username"
             className="form-control"
-            onChange={handleChange}
+            ref={register({ required: true, minLength: 4 })}
             placeholder="Enter your username..."
           />
-          <label for="password" className="mt-2">
+          <ErrorMessage error={errors.username} />
+          <label htmlFor="password" className="mt-2">
             Password
           </label>
           <input
+            type="password"
             name="password"
+            autoComplete="on"
             id="password"
             className="form-control"
-            onChange={handleChange}
+            ref={register({ required: true, minLength: 8 })}
             placeholder="Enter your password..."
           />
+          <PasswordError error={errors.password} />
           <button className="login-submit btn btn-primary m-3 pl-5 pr-5">
             Login
           </button>
