@@ -37,7 +37,7 @@ export const initialState = {
   editedPost: {},
 };
 
-export const Reducers = (state = initialState, action) => {
+export const appReducers = (state = initialState, action) => {
   switch (action.type) {
     case LOGIN_START:
       return {

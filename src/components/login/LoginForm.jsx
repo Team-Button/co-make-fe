@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { postLogin } from "../../actions";
+import { postLogin } from "../../redux/actions";
 
 export function LoginForm() {
   const [credentials, setCredentials] = useState({
