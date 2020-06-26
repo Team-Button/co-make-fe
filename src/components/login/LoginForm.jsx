@@ -33,7 +33,6 @@ export function LoginForm({ props }) {
           <input
             type="password"
             name="password"
-            autoComplete="on"
             id="password"
             className="form-control"
             ref={register({ required: true, minLength: 8 })}
