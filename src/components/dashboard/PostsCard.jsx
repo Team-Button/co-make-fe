@@ -6,8 +6,8 @@ function PostsCard() {
     <div className="card ">
       <img className="card-img-top" src={Image} alt="C" />
       <div className="card-body row ">
-        <h4 className="card-title m-2 mt-3 mr-5 pl-1 pr-1">Card title</h4>
-        <button className="btn btn-primary m-3 ml-5 pl-1 pr-1 pt-0 pb-0">
+        <h4 className="card-title m-2 mt-3 mr-5 pl- pr-1">Card title</h4>
+        <button className="btn btn-primary btn-sm m-3 ml-5 pl-2 pr-2 pt-0 pb-0">
           Upvote
         </button>
       </div>

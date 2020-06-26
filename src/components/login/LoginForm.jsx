@@ -5,12 +5,13 @@ import { postLogin } from "../../redux/actions";
 import { useForm } from "react-hook-form";
 import { ErrorMessage, PasswordError } from "./ErrorMessage";
 
-export function LoginForm(props) {
+export function LoginForm({ props }) {
   const { register, errors, handleSubmit } = useForm();
   const dispatch = useDispatch();
 
   const onSubmit = (values) => {
     dispatch(postLogin({ props, values }));
+    props.history.push("/dashboard")
   };
 
   return (

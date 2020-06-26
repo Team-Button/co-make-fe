@@ -8,6 +8,7 @@ export const postLogin = (payload) => async (dispatch) => {
   dispatch({ type: LOGIN_START });
   try {
     const res = await AxiosWithAuth().post("/auth/login", payload.values);
+    console.log(payload.props)
     dispatch({ type: LOGIN_SUCCESS, payload: res.data });
     localStorage.setItem("token", res.data.token);
     localStorage.setItem("welcomemsg", res.data.message);

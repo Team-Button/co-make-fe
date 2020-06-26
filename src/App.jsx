@@ -1,20 +1,20 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
-import { Login, Register, Dashboard, SinglePost, EditPost } from "./pages";
+import { Login, Register, Dashboard, SinglePost, EditPost, AddPost, MyPosts } from "./pages";
 import { PrivateRoute } from "./utils";
 
 import "./styling/css/styles.css";
 function App() {
   return (
     <>
-      <SinglePost />
-      {/* <Switch>
+      <Switch>
         <Route exact path={["/", "/login"]} component={Login} />
         <Route path="/register" component={Register} />
-        <Route path="/single" component={SinglePost} />
-
         <PrivateRoute path="/dashboard" component={Dashboard} />
-      </Switch> */}
+        <PrivateRoute path="/report-issue" component={AddPost} />
+        <PrivateRoute path="/my-post" component={MyPosts} />
+        <PrivateRoute path="/posts/:id" component={SinglePost} />
+      </Switch>
     </>
   );
 }
