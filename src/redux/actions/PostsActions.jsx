@@ -8,6 +8,10 @@ export const GET_POST_START = "GET_POSTS_START";
 export const GET_POST_SUCCESS = "GET_POSTS_SUCCESS";
 export const GET_POST_FAIL = "GET_POSTS_FAIL";
 
+export const ADD_POST_START = "ADD_POSTS_START";
+export const ADD_POST_SUCCESS = "ADD_POSTS_SUCCESS";
+export const ADD_POST_FAIL = "ADD_POSTS_FAIL";
+
 export const EDIT_POST_START = "EDIT_POSTS_START";
 export const EDIT_POST_SUCCESS = "EDIT_POSTS_SUCCESS";
 export const EDIT_POST_FAIL = "EDIT_POSTS_FAIL";
@@ -38,10 +42,21 @@ export const getPostById = (id) => async (dispatch) => {
   }
 };
 
+export const addPost = (payload) => async (dispatch) => {
+  dispatch({ type: ADD_POST_START });
+  try {
+    const res = await AxiosWithAuth().post("/posts", payload.values);
+    dispatch({ type: ADD_POST_SUCCESS, payload: res.data });
+  } catch (error) {
+    console.log(error);
+    dispatch({ type: ADD_POST_FAIL, payload: error });
+  }
+};
+
 export const editPost = (id, payload) => async (dispatch) => {
   dispatch({ type: EDIT_POST_START });
   try {
-    const res = await AxiosWithAuth().get(`/posts/${id}`, payload);
+    const res = await AxiosWithAuth().get(`/posts/${id}`, payload.values);
     dispatch({ type: EDIT_POST_SUCCESS, payload: res.data });
   } catch (error) {
     console.log(error);

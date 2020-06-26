@@ -11,12 +11,17 @@ import {
   GET_POST_START,
   GET_POST_SUCCESS,
   GET_POST_FAIL,
+  ADD_POST_START,
+  ADD_POST_SUCCESS,
+  ADD_POST_FAIL,
   EDIT_POST_START,
   EDIT_POST_SUCCESS,
   EDIT_POST_FAIL,
   DELETE_POST_START,
   DELETE_POST_SUCCESS,
   DELETE_POST_FAIL,
+  LOGOUT
+
 } from "../actions";
 
 export const initialState = {
@@ -31,11 +36,11 @@ export const initialState = {
     name: "",
     id: null,
   },
-  posts: {
-    allPosts: [],
-  },
+  allPosts: []
+  ,
   post: {},
   editedPost: {},
+  newPost: {}
 };
 
 export const Reducers = (state = initialState, action) => {
@@ -111,6 +116,24 @@ export const Reducers = (state = initialState, action) => {
         err: action.payload,
       };
 
+    case ADD_POST_START:
+      return {
+        ...state,
+        isUpdating: true,
+      };
+    case ADD_POST_SUCCESS:
+      return {
+        ...state,
+        isUpdating: false,
+        newPost: action.payload,
+      };
+    case ADD_POST_FAIL:
+      return {
+        ...state,
+        isUpdating: false,
+        err: action.payload,
+      };
+
     case EDIT_POST_START:
       return {
         ...state,
@@ -143,6 +166,12 @@ export const Reducers = (state = initialState, action) => {
         ...state,
         err: action.payload,
       };
+    case LOGOUT:
+      return {
+      ...state,
+      isLoggedIn: false,
+      token: '',
+      } 
 
     default:
       return state;
