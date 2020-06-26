@@ -8,7 +8,11 @@ export * from "./login/LoginForm";
 export * from "./register/RegisterHeader";
 export * from "./register/RegisterForm";
 
-export * from "./dashboard/Post";
 export * from "./dashboard/PostsCard";
 export * from "./dashboard/Posts";
 export * from "./dashboard/Links";
+
+export * from "./singlepage/SingleIssue"
+
+export * from "./edit-add/Add"
+export * from "./edit-add/Edit"

@@ -11,6 +11,9 @@ header h1 {
 .register {
   min-height: 85vh; }
 
+main {
+  min-height: 75vh; }
+
 .counity-signup {
   color: #008674;
   font-weight: bolder; }
@@ -25,9 +28,23 @@ header h1 {
 .login-form, .register-form {
   max-width: 350px; }
 
+.edit-form, .add-form {
+  max-width: 550px; }
+
 .copyright {
   text-align: center;
   color: #C4C4C4; }
+
+.nav-logo h2 {
+  color: white;
+  font-size: 2.4rem;
+  font-family: "Caveat", cursive; }
+
+nav a {
+  color: white; }
+
+label {
+  margin-top: 1.5rem; }
 
 /*!
  * Bootstrap v4.5.0 (https://getbootstrap.com/)
