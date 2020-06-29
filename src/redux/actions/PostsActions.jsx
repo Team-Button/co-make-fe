@@ -4,21 +4,21 @@ export const GET_POSTS_START = "GET_POSTS_START";
 export const GET_POSTS_SUCCESS = "GET_POSTS_SUCCESS";
 export const GET_POSTS_FAIL = "GET_POSTS_FAIL";
 
-export const GET_POST_START = "GET_POSTS_START";
-export const GET_POST_SUCCESS = "GET_POSTS_SUCCESS";
-export const GET_POST_FAIL = "GET_POSTS_FAIL";
+export const GET_POST_START = "GET_POST_START";
+export const GET_POST_SUCCESS = "GET_POST_SUCCESS";
+export const GET_POST_FAIL = "GET_POST_FAIL";
 
-export const ADD_POST_START = "ADD_POSTS_START";
-export const ADD_POST_SUCCESS = "ADD_POSTS_SUCCESS";
-export const ADD_POST_FAIL = "ADD_POSTS_FAIL";
+export const ADD_POST_START = "ADD_POST_START";
+export const ADD_POST_SUCCESS = "ADD_POST_SUCCESS";
+export const ADD_POST_FAIL = "ADD_POST_FAIL";
 
-export const EDIT_POST_START = "EDIT_POSTS_START";
-export const EDIT_POST_SUCCESS = "EDIT_POSTS_SUCCESS";
-export const EDIT_POST_FAIL = "EDIT_POSTS_FAIL";
+export const EDIT_POST_START = "EDIT_POST_START";
+export const EDIT_POST_SUCCESS = "EDIT_POST_SUCCESS";
+export const EDIT_POST_FAIL = "EDIT_POST_FAIL";
 
-export const DELETE_POST_START = "DELETE_POSTS_START";
-export const DELETE_POST_SUCCESS = "DELETE_POSTS_SUCCESS";
-export const DELETE_POST_FAIL = "DELETE_POSTS_FAIL";
+export const DELETE_POST_START = "DELETE_POST_START";
+export const DELETE_POST_SUCCESS = "DELETE_POST_SUCCESS";
+export const DELETE_POST_FAIL = "DELETE_POST_FAIL";
 
 export const getPosts = () => async (dispatch) => {
   dispatch({ type: GET_POSTS_START });

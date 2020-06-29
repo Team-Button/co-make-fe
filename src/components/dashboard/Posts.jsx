@@ -22,7 +22,7 @@ export function Posts() {
         <h2>Top Issues</h2>
       </div>
       <div className="card-columns">
-      {postList.map((post, index) => 
+      {postList.posts.map((post, index) => 
       <PostsCard post={ post } id={ index } />    
                 )
             }

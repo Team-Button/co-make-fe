@@ -6,6 +6,7 @@ function PostsCard({ post }) {
 
   const [ vote, setVote ] = useState(false)
   const [ totalVote, setTotalVote ] = useState(0)
+
   useEffect(()=> {
       const allVotes = post.votes.length
       setTotalVote(allVotes)
