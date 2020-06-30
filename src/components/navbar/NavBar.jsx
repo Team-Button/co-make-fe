@@ -25,7 +25,7 @@ export function NavBar(props) {
     <Link className="nav-item nav-link" to="/dashboard">Home</Link>
     <Link className="nav-item nav-link" to="/my-post">My Posts</Link>
     <Link className="nav-item nav-link" to="/report-issue">Report an Issue</Link>
-    <Link className="nav-item nav-link" onClick={signOut}>Logout</Link>
+    <Link className="nav-item nav-link" onClick={signOut} to="/">Logout</Link>
   </div>
 
 </nav>

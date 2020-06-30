@@ -1,27 +1,27 @@
 import React, { useState, useEffect } from 'react'
 import { AxiosWithAuth } from "../../utils"
 
-export default function TopPart({ props }) {
+export default function TopPart({ post }) {
 
     const [ vote, setVote ] = useState(false)
     const [ totalVote, setTotalVote ] = useState(0)
-    console.log("props", props)
+    console.log("props", post)
     useEffect(()=> {
-        setTotalVote(props.post.votes.length)
-        if (props.post.votes.find(el => el.voter_id == props.post.reported_by)){
+        setTotalVote(post.votes.length)
+        if (post.votes.find(el => el.voter_id == post.reported_by)){
             setVote(true)
         }
     },[vote, setVote])
 
     const sendVote = async (e) => {
         setVote(true)
-        const newVote = await AxiosWithAuth().post(`/api/post/${props.post.id}/vote`)
+        const newVote = await AxiosWithAuth().post(`/api/post/${post.id}/vote`)
         setTotalVote(totalVote + 1)
     }
 
     const unVote = async (e) => {
         setVote(false)
-        const newVote = await AxiosWithAuth().delete(`/api/post/${props.post.id}/vote`)
+        const newVote = await AxiosWithAuth().delete(`/api/post/${post.id}/vote`)
         setTotalVote(totalVote - 1)
     }
 
@@ -31,16 +31,16 @@ export default function TopPart({ props }) {
                 <div className="col-6 topic-name-date p-2">
                     <div className="topic">                    
                         <h3>Topic</h3>
-                        <h2>{ props.post.topic }</h2>
+                        <h2>{ post.topic }</h2>
                     </div>
                     
                     <div className="reportedby">
                         <h4><strong>Reported By</strong></h4>
-                        <h4>{ props.post.reported_by }</h4>
+                        <h4>{ post.reported_by }</h4>
                     </div>
                     <div className="posteddate">
                         <h4><strong>Posted Date</strong></h4>
-                        <h4>{ props.post.posted_date }</h4>
+                        <h4>{ post.posted_date }</h4>
                     </div>
 
                 </div>
@@ -68,7 +68,7 @@ export default function TopPart({ props }) {
                     </div>
                     <div>
                         <p>
-                            { props.post.description }
+                            { post.description }
                         </p>
                     </div>
                 </div>
