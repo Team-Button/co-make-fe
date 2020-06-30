@@ -1,37 +1,74 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import { AxiosWithAuth } from "../../utils"
 
-export default function TopPart({ topic, description, reported_by, posted_date, votes }) {
+export default function TopPart(props) {
+
+    const [ vote, setVote ] = useState(false)
+    const [ totalVote, setTotalVote ] = useState(0)
+    console.log("props", props)
+    useEffect(()=> {
+        setTotalVote(props.postData.votes.length)
+        if (props.postData.votes.find(el => el.voter_id == props.postData.reported_by)){
+            setVote(true)
+        }
+    },[vote, setVote])
+
+    const sendVote = async (e) => {
+        setVote(true)
+        const newVote = await AxiosWithAuth().post(`/api/post/${props.postData.id}/vote`)
+        setTotalVote(totalVote + 1)
+    }
+
+    const unVote = async (e) => {
+        setVote(false)
+        const newVote = await AxiosWithAuth().delete(`/api/post/${props.postData.id}/vote`)
+        setTotalVote(totalVote - 1)
+    }
+
     return (
         <>
             <section className="row m-5">
                 <div className="col-6 topic-name-date p-2">
                     <div className="topic">                    
                         <h3>Topic</h3>
-                        <h2>{ topic }</h2>
+                        <h2>{ props.postData.topic }</h2>
                     </div>
                     
                     <div className="reportedby">
                         <h4><strong>Reported By</strong></h4>
-                        <h4>{ reported_by }</h4>
+                        <h4>{ props.postData.reported_by }</h4>
                     </div>
                     <div className="posteddate">
                         <h4><strong>Posted Date</strong></h4>
-                        <h4>{ posted_date }</h4>
+                        <h4>{ props.postData.posted_date }</h4>
                     </div>
 
                 </div>
                 <div className="col-6 votes-description p-2">
                     <div className="current-votes">
                         <h4>Current Vote</h4>
-                        <h3>{ votes }</h3>
+                        <h3>{ totalVote }</h3>
                     </div>
                     <div className="vote-button">
-                        <button className="btn btn-primary">Vote</button>
-                        <button className="btn btn-secondary">Vote</button>
+                        {
+                            vote === true ? 
+                            <button 
+                                className="btn btn-secondary"
+                                onClick={unVote}>
+                                Vote
+                            </button> :
+                            <button 
+                                className="btn btn-primary"
+                                onClick={sendVote}>
+                                Vote
+                            </button>
+                        }
+                        
+                        
                     </div>
                     <div>
                         <p>
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione quas maxime quae sunt dolor voluptatum deserunt inventore qui minima, suscipit et sequi quaerat eos tempore expedita maiores possimus! Doloribus, laborum?
+                            { props.postData.description }
                         </p>
                     </div>
                 </div>
