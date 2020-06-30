@@ -1,11 +1,15 @@
 import React from 'react'
+
+
 import TopPart from './TopPart'
 
-export function SingleIssue() {
+export function SingleIssue({ props }) {
+    
     return (
         <>
             <article className="single-issue">
-                <TopPart />
+                {props.isFetching && <div></div>}
+                {props.post && <TopPart props={props.post} /> }
             </article>
         </>
     )

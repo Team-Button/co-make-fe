@@ -4,6 +4,8 @@ export const LOGIN_START = "LOGIN_START";
 export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
 export const LOGIN_FAIL = "LOGIN_FAIL";
 
+export const LOGOUT = "LOGOUT";
+
 export const postLogin = (payload) => async (dispatch) => {
   dispatch({ type: LOGIN_START });
   try {
@@ -18,3 +20,8 @@ export const postLogin = (payload) => async (dispatch) => {
     dispatch({ type: LOGIN_FAIL, payload: error });
   }
 };
+
+export const logout = () => dispatch => {
+  dispatch({ type: LOGOUT });
+  localStorage.clear()
+}
