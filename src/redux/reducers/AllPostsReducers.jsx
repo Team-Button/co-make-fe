@@ -24,14 +24,14 @@ import {
           ...state,
           isFetching: false,
           isFetched: true,
-          allPosts: action.payload,
+          posts: action.payload,
         };
       case GET_POSTS_FAIL:
         return {
           ...state,
           isFetching: false,
           isFetched:false,
-          err: action.payload,
+          error: action.payload,
         };
       default:
         return state;

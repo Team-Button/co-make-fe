@@ -5,8 +5,8 @@ import { Layout, SingleIssue } from "../components"
 
 export function SinglePost(props) {
     const dispatch = useDispatch()
-    const singlePost = useSelector(singlePost => singlePost)
-    console.log(singlePost)
+    const post = useSelector(state => state.singlePost)
+    console.log(post.post)
     useEffect(()=> {
         dispatch(getPostById(props.match.params.id))
     },[])
@@ -15,8 +15,8 @@ export function SinglePost(props) {
         <>
             <Layout>
                 <main>
-                {singlePost.isFetching && <div></div>}
-                {singlePost.post &&  <SingleIssue props={props, singlePost}/>}
+                {post.isFetching && <div></div>}
+                {post.post &&  <SingleIssue props={post}/>}
 
                     
                 </main>
