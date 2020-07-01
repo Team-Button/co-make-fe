@@ -5,18 +5,19 @@ import { Layout, SingleIssue } from "../components"
 
 export function SinglePost(props) {
     const dispatch = useDispatch()
-    const post = useSelector(state => state.singlePost)
-    console.log(post.post)
+    const thisPost = useSelector(state => state.singlePost)
+    console.log(props.match.params.id)
+    console.log(thisPost)
     useEffect(()=> {
         dispatch(getPostById(props.match.params.id))
-    },[])
+    },[dispatch, props.match.params.id])
     
     return (
         <>
             <Layout>
                 <main>
-                {post.isFetching && <div></div>}
-                {post.post &&  <SingleIssue props={post}/>}
+                {thisPost.isFetching && <div></div>}
+                {thisPost.isActionSuccess &&  <SingleIssue post={thisPost.post}/>}
 
                     
                 </main>
