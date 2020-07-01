@@ -1,28 +1,30 @@
 import React, { useState, useEffect } from 'react'
 import { AxiosWithAuth } from "../../utils"
 
-export default function TopPart({ post }) {
+export default function TopPart({ post, userInfo }) {
 
     const [ vote, setVote ] = useState(false)
-    const [ totalVote, setTotalVote ] = useState(0)
+    const [ totalVote, setTotalVote ] = useState(post.votes)
     console.log("props", post)
     useEffect(()=> {
-        setTotalVote(post.votes.length)
-        if (post.votes.find(el => el.voter_id == post.reported_by)){
+        if (totalVote.find(el => parseInt(el.voter_id) === parseInt(userInfo.user.id))){
             setVote(true)
         }
-    },[vote, setVote])
+    },[])
 
     const sendVote = async (e) => {
+        e.preventDefault()
+
+        const newVote = await AxiosWithAuth().post(`/posts/${post.id}/vote`)
+        setTotalVote(newVote.data)
         setVote(true)
-        const newVote = await AxiosWithAuth().post(`/api/post/${post.id}/vote`)
-        setTotalVote(totalVote + 1)
     }
 
     const unVote = async (e) => {
+        e.preventDefault()
+        const newVote = await AxiosWithAuth().delete(`/posts/${post.id}/vote`)
+        setTotalVote(newVote.data)
         setVote(false)
-        const newVote = await AxiosWithAuth().delete(`/api/post/${post.id}/vote`)
-        setTotalVote(totalVote - 1)
     }
 
     return (
@@ -47,7 +49,7 @@ export default function TopPart({ post }) {
                 <div className="col-4 votes-description p-2">
                     <div className="current-votes">
                         <h5><strong>Current Vote</strong></h5>
-                        <h3 className="text-primary"><strong>{ totalVote }</strong></h3>
+                        <h3 className="text-primary"><strong>{ totalVote.length }</strong></h3>
                     </div>
                     <div className="vote-button">
                         {
@@ -55,7 +57,7 @@ export default function TopPart({ post }) {
                             <button 
                                 className="btn btn-secondary"
                                 onClick={unVote}>
-                                Vote
+                                Unvote
                             </button> :
                             <button 
                                 className="btn btn-primary"

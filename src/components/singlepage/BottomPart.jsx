@@ -2,11 +2,10 @@ import React from 'react';
 import biedit from '../../assets/biedit.svg'
 import bidelete from '../../assets/bidelete.svg'
 import DeleteModal from './DeleteModal'
-import { useSelector } from 'react-redux'
 
-export default function BottomPart({ props, post }) {
 
-    const userInfo = useSelector(state => state.login)
+export default function BottomPart({ props, post, userInfo }) {
+
     return (
         <>
 

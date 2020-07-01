@@ -6,15 +6,12 @@ import { useDispatch, useSelector} from "react-redux";
 
 export function Posts() {
   
-  const postList = useSelector(state => state.allPosts)
+  const { allPosts, login } = useSelector(state => state)
   const dispatch = useDispatch();
-
-  console.log(postList)
 
   useEffect(() => {
    dispatch(getPosts())
   }, [dispatch]) 
-  console.log(postList)
 
   return (
     <div>
@@ -22,10 +19,10 @@ export function Posts() {
         <h2>Top Issues</h2>
       </div>
       <div className="card-columns">
-      {postList.posts.map((post, index) => 
-      <PostsCard post={ post } id={ index } />    
-                )
-            }
+      {
+        allPosts.posts.map((post, index) => 
+          <PostsCard post={ post } id={ index } userInfo={login} />    
+      )}
       </div>
     </div>
   );
