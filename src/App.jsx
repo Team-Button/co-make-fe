@@ -11,7 +11,7 @@ import {
 } from "./pages";
 import { PrivateRoute } from "./utils";
 
-import "./styling/css/styles.css";
+import "./styling/css/styles.min.css";
 function App() {
   return (
     <>
