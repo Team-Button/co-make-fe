@@ -17,7 +17,7 @@ export function SinglePost(props) {
             <Layout>
                 <main>
                 {thisPost.isFetching && <div></div>}
-                {thisPost.isActionSuccess &&  <SingleIssue post={thisPost.post}/>}
+                {thisPost.isActionSuccess &&  <SingleIssue props={props} post={thisPost.post}/>}
 
                     
                 </main>

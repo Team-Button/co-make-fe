@@ -27,27 +27,27 @@ export default function TopPart({ post }) {
 
     return (
         <>
-            <section className="row m-5">
-                <div className="col-6 topic-name-date p-2">
-                    <div className="topic">                    
-                        <h3>Topic</h3>
-                        <h2>{ post.topic }</h2>
-                    </div>
+            <section className="row mt-5">
+                <div className="topic col-12">                    
+                        <h2><strong>{ post.topic }</strong></h2>
+                </div>
+                <div className="col-8 topic-name-date py-3">
+
                     
                     <div className="reportedby">
-                        <h4><strong>Reported By</strong></h4>
-                        <h4>{ post.reported_by }</h4>
+                        <h5><strong>Reported By</strong></h5>
+                        <p>{ post.reporter }</p>
                     </div>
                     <div className="posteddate">
-                        <h4><strong>Posted Date</strong></h4>
-                        <h4>{ post.posted_date }</h4>
+                        <h5><strong>Posted Date</strong></h5>
+                        <p>{ post.posted_date }</p>
                     </div>
 
                 </div>
-                <div className="col-6 votes-description p-2">
+                <div className="col-4 votes-description p-2">
                     <div className="current-votes">
-                        <h4>Current Vote</h4>
-                        <h3>{ totalVote }</h3>
+                        <h5><strong>Current Vote</strong></h5>
+                        <h3 className="text-primary"><strong>{ totalVote }</strong></h3>
                     </div>
                     <div className="vote-button">
                         {
@@ -63,13 +63,6 @@ export default function TopPart({ post }) {
                                 Vote
                             </button>
                         }
-                        
-                        
-                    </div>
-                    <div>
-                        <p>
-                            { post.description }
-                        </p>
                     </div>
                 </div>
             </section>
