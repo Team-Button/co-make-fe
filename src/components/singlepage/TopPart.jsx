@@ -20,7 +20,6 @@ export default function TopPart({ post, userInfo }) {
         setTotalVote(newVote.data)
         setVote(true)
     }
-  }, [vote, setVote]);
 
     const unVote = async (e) => {
         e.preventDefault()
