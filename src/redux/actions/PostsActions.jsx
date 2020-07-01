@@ -46,6 +46,7 @@ export const addPost = (payload) => async (dispatch) => {
   dispatch({ type: ADD_POST_START });
   try {
     const res = await AxiosWithAuth().post("/posts", payload.values);
+    console.log(payload.props);
     dispatch({ type: ADD_POST_SUCCESS, payload: res.data });
   } catch (error) {
     console.log(error);
@@ -56,7 +57,7 @@ export const addPost = (payload) => async (dispatch) => {
 export const editPost = (id, payload) => async (dispatch) => {
   dispatch({ type: EDIT_POST_START });
   try {
-    const res = await AxiosWithAuth().edit(`/posts/${id}`, payload.values);
+    const res = await AxiosWithAuth().put(`/posts/${id}`, payload.values);
     dispatch({ type: EDIT_POST_SUCCESS, payload: res.data });
   } catch (error) {
     console.log(error);

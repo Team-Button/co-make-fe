@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react'
-import { AxiosWithAuth } from "../../utils"
+import React, { useState, useEffect } from "react";
+import { AxiosWithAuth } from "../../utils";
+import { Link } from "react-router-dom";
 
 export default function TopPart({ post, userInfo }) {
 
@@ -19,6 +20,7 @@ export default function TopPart({ post, userInfo }) {
         setTotalVote(newVote.data)
         setVote(true)
     }
+  }, [vote, setVote]);
 
     const unVote = async (e) => {
         e.preventDefault()
