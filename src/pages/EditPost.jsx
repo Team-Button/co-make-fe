@@ -1,11 +1,11 @@
 import React from "react";
-import { Layout, Edit} from "../components";
+import { Layout, Edit } from "../components";
 
-export function EditPost() {
+export function EditPost(props) {
   return (
     <>
       <Layout>
-        <Edit />
+        <Edit props={props} />
       </Layout>
     </>
   );
