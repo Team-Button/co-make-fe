@@ -5,15 +5,15 @@ export function Links() {
   return (
     <div className="row mb-2 mt-5  ">
       <div className="col-md-2 ">
-        <Link to="/about">Home</Link>
+        <Link to="/report-issue">Add a New Post</Link>
       </div>
 
       <div className="col-md-2">
-        <Link to="/about">All Issues</Link>{" "}
+        <Link to="/dashboard">All Issues</Link>{" "}
       </div>
 
       <div className="col-md-2">
-        <Link to="/about">Top Issues</Link>{" "}
+        <Link to="/dashboard">Top Issues</Link>{" "}
       </div>
 
       <div className="col-md-2">

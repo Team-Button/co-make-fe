@@ -65,9 +65,7 @@ export function Add({ props }) {
                     <div></div>
                     <button className="upload-photo btn btn-primary px-5 m-5">Upload Photo</button>
                 </section>  */}
-          <button className="add-btn btn btn-primary pl-5 pr-5 m-3">
-            Add Post
-          </button>
+          <button className="add-btn btn btn-primary p-3 mt-4">Add Post</button>
         </div>
       </form>
     </>

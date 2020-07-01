@@ -4,13 +4,11 @@ import { editPost } from "../../redux/actions";
 import { useDispatch } from "react-redux";
 import { ErrorMessage } from "./ErrorMessage";
 
-export function Edit({ props }) {
+export function Edit({ props, post }) {
   const { register, errors, handleSubmit } = useForm();
   const dispatch = useDispatch();
 
   const onSubmit = (values) => {
-    console.log("val", values);
-    console.log("props", props);
     dispatch(editPost(props.match.params.id, { props, values }));
     props.history.push(`/posts/${props.match.params.id}`);
   };
@@ -22,6 +20,7 @@ export function Edit({ props }) {
           <label for="topic">Topic</label>
           <input
             className="form-control"
+            placeholder={post.topic}
             id="topic"
             name="topic"
             ref={register({ required: true, minLength: 3 })}
@@ -46,6 +45,7 @@ export function Edit({ props }) {
           <label for="description">Description</label>
           <textarea
             className="form-control"
+            placeholder={post.description}
             name="description"
             id="topic"
             rows="4"
@@ -56,6 +56,7 @@ export function Edit({ props }) {
           <label for="photo">Photo</label>
           <input
             className="edit-photo"
+            placeholder={post.photo}
             id="photo"
             name="photo"
             ref={register({ required: true })}
@@ -66,7 +67,7 @@ export function Edit({ props }) {
                 <div></div>
                 <button className="upload-photo btn btn-primary px-5 m-5">Upload Photo</button>
             </section>  */}
-          <button className="add-btn btn btn-primary pl-5 pr-5 m-3">
+          <button className="add-btn btn btn-primary p-3 mt-4">
             Edit Content
           </button>
         </div>
