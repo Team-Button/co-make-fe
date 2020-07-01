@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { postLogin } from "../../redux/actions";
+import { postLogin, getPosts } from "../../redux/actions";
 import { useForm } from "react-hook-form";
 import { ErrorMessage, PasswordError } from "./ErrorMessage";
 
@@ -11,7 +11,8 @@ export function LoginForm({ props }) {
 
   const onSubmit = (values) => {
     dispatch(postLogin({ props, values }));
-    props.history.push("/dashboard")
+    props.history.push("/dashboard");
+    dispatch(getPosts());
   };
 
   return (
