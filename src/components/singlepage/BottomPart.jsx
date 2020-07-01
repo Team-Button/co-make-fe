@@ -11,7 +11,7 @@ export default function BottomPart({ props, post, userInfo }) {
 
             <section className="bottom-half d-flex justify-content-arount p-5">
                 <div className="image-wrap p-2 col-6 rounded">
-                    <img src={post.photo} alt={`Photo of ${post.topic}`}/>
+                    <img src={post.photo} alt={`${post.topic}`}/>
                 </div>
                 <div className="description p-2 col-6">
                     <h3>Description</h3>
@@ -21,7 +21,7 @@ export default function BottomPart({ props, post, userInfo }) {
                             userInfo.user.id === post.reported_id ?
                             <>
                             <img src={biedit} className="m-2 btn btn-light" alt="Edit Icon" href="/edit-post"  />
-                            <button type="button" className="m-2 btn btn-light" alt="Delete Icon" data-toggle="modal" data-target="#deleteModal"><img src={bidelete}  /></button>
+                            <button type="button" className="m-2 btn btn-light" data-toggle="modal" data-target="#deleteModal"><img src={bidelete} alt="delete icoon" /></button>
                             <DeleteModal props={props} post={post}/>
                             </> :
                             <div></div>

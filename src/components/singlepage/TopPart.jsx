@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { AxiosWithAuth } from "../../utils";
-import { Link } from "react-router-dom";
 
 export default function TopPart({ post, userInfo }) {
 
@@ -11,7 +10,7 @@ export default function TopPart({ post, userInfo }) {
         if (totalVote.find(el => parseInt(el.voter_id) === parseInt(userInfo.user.id))){
             setVote(true)
         }
-    },[])
+    },[totalVote, userInfo.user.id])
 
     const sendVote = async (e) => {
         e.preventDefault()
