@@ -2,76 +2,74 @@ import React, { useState, useEffect } from "react";
 import { AxiosWithAuth } from "../../utils";
 import { Link } from "react-router-dom";
 
-export default function TopPart({ post }) {
-  const [vote, setVote] = useState(false);
-  const [edit, setEdit] = useState(false);
-  const [totalVote, setTotalVote] = useState(0);
-  console.log("props", post);
-  useEffect(() => {
-    setTotalVote(post.votes.length);
-    if (post.votes.find((el) => el.voter_id == post.reported_by)) {
-      setVote(true);
+export default function TopPart({ post, userInfo }) {
+
+    const [ vote, setVote ] = useState(false)
+    const [ totalVote, setTotalVote ] = useState(post.votes)
+    console.log("props", post)
+    useEffect(()=> {
+        if (totalVote.find(el => parseInt(el.voter_id) === parseInt(userInfo.user.id))){
+            setVote(true)
+        }
+    },[])
+
+    const sendVote = async (e) => {
+        e.preventDefault()
+
+        const newVote = await AxiosWithAuth().post(`/posts/${post.id}/vote`)
+        setTotalVote(newVote.data)
+        setVote(true)
     }
   }, [vote, setVote]);
 
-  const sendVote = async (e) => {
-    setVote(true);
-    const newVote = await AxiosWithAuth().post(`/api/post/${post.id}/vote`);
-    setTotalVote(totalVote + 1);
-  };
+    const unVote = async (e) => {
+        e.preventDefault()
+        const newVote = await AxiosWithAuth().delete(`/posts/${post.id}/vote`)
+        setTotalVote(newVote.data)
+        setVote(false)
+    }
 
-  const unVote = async (e) => {
-    setVote(false);
-    const newVote = await AxiosWithAuth().delete(`/api/post/${post.id}/vote`);
-    setTotalVote(totalVote - 1);
-  };
+    return (
+        <>
+            <section className="row mt-5">
+                <div className="topic col-12">                    
+                        <h2><strong>{ post.topic }</strong></h2>
+                </div>
+                <div className="col-8 topic-name-date py-3">
 
-  return (
-    <>
-      <section className="row m-5">
-        <div className="col-6 topic-name-date p-2">
-          <div className="topic">
-            <h3>Topic</h3>
-            <h2>{post.topic}</h2>
-          </div>
+                    
+                    <div className="reportedby">
+                        <h5><strong>Reported By</strong></h5>
+                        <p>{ post.reporter }</p>
+                    </div>
+                    <div className="posteddate">
+                        <h5><strong>Posted Date</strong></h5>
+                        <p>{ post.posted_date }</p>
+                    </div>
 
-          <div className="reportedby">
-            <h4>
-              <strong>Reported By</strong>
-            </h4>
-            <h4>{post.reported_by}</h4>
-          </div>
-          <div className="posteddate">
-            <h4>
-              <strong>Posted Date</strong>
-            </h4>
-            <h4>{post.posted_date}</h4>
-          </div>
-        </div>
-        <div className="col-6 votes-description p-2">
-          <div className="current-votes">
-            <h4>Current Vote</h4>
-            <h3>{totalVote}</h3>
-          </div>
-          <div className="vote-button">
-            {vote === true ? (
-              <button className="btn btn-secondary" onClick={unVote}>
-                Vote
-              </button>
-            ) : (
-              <button className="btn btn-primary" onClick={sendVote}>
-                Vote
-              </button>
-            )}
-          </div>
-          <div>
-            <p>{post.description}</p>
-          </div>
-          <Link to={`/edit/${post.id}`}>
-            <button className="btn btn-primary">Edit Post</button>
-          </Link>
-        </div>
-      </section>
-    </>
-  );
+                </div>
+                <div className="col-4 votes-description p-2">
+                    <div className="current-votes">
+                        <h5><strong>Current Vote</strong></h5>
+                        <h3 className="text-primary"><strong>{ totalVote.length }</strong></h3>
+                    </div>
+                    <div className="vote-button">
+                        {
+                            vote === true ? 
+                            <button 
+                                className="btn btn-secondary"
+                                onClick={unVote}>
+                                Unvote
+                            </button> :
+                            <button 
+                                className="btn btn-primary"
+                                onClick={sendVote}>
+                                Vote
+                            </button>
+                        }
+                    </div>
+                </div>
+            </section>
+        </>
+    )
 }

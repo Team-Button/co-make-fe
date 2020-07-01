@@ -44,7 +44,10 @@ nav a {
   color: white; }
 
 label {
-  margin-top: 1.5rem; }
+  margin-top: 1.6rem; }
+
+.image-wrap img {
+  width: 100%; }
 
 /*!
  * Bootstrap v4.5.0 (https://getbootstrap.com/)

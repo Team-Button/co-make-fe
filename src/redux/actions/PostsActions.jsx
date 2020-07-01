@@ -66,12 +66,12 @@ export const editPost = (id, payload) => async (dispatch) => {
 };
 
 export const deletePost = (id) => async (dispatch) => {
-  dispatch({ type: EDIT_POST_START });
+  dispatch({ type: DELETE_POST_START });
   try {
-    await AxiosWithAuth().get(`/posts/${id}`);
-    dispatch({ type: EDIT_POST_SUCCESS });
+    await AxiosWithAuth().delete(`/posts/${id}`);
+    dispatch({ type: DELETE_POST_SUCCESS });
   } catch (error) {
     console.log(error);
-    dispatch({ type: EDIT_POST_FAIL, payload: error });
+    dispatch({ type: DELETE_POST_FAIL, payload: error });
   }
 };

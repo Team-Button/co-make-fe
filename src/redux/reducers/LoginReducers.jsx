@@ -8,7 +8,6 @@ import {
   
   export const loginState = {
     user: {
-        name: "",
         id: null,
         token: "",
         message: ""
