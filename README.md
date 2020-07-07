@@ -1,3 +1,4 @@
 # co-make-fe
 Community Cooperation app
-React + Redux
+</br>
+Made using React + Redux
