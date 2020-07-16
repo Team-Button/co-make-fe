@@ -11,7 +11,6 @@ export function LoginForm({ props }) {
 
   const onSubmit = (values) => {
     dispatch(postLogin({ props, values }));
-    props.history.push("/dashboard");
     dispatch(getPosts());
   };
 

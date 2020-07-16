@@ -19,11 +19,15 @@
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0"
   },
+  "devDependencies": {
+    "node-sass": "^4.14.1"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "scss": "node-sass -watch styles.scss -o styles.min.css"
   },
   "eslintConfig": {
     "extends": "react-app"

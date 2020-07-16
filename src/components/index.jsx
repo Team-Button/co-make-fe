@@ -12,7 +12,9 @@ export * from "./dashboard/PostsCard";
 export * from "./dashboard/Posts";
 export * from "./dashboard/Links";
 
-export * from "./singlepage/SingleIssue"
+export * from "./singlepage/SingleIssue";
 
-export * from "./edit-add/Add"
-export * from "./edit-add/Edit"
+export * from "./edit-add/Add";
+export * from "./edit-add/Edit";
+
+export * from "./landing/Hero";
