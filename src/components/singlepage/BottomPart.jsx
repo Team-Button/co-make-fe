@@ -37,9 +37,9 @@ export default function BottomPart({ props, post, userInfo }) {
               <div></div>
             )}
           </div>
-          <Link to={`/edit/${post.id}`}>
+          {/* <Link to={`/edit/${post.id}`}>
             <button className="btn btn-primary">Edit Post</button>
-          </Link>
+          </Link> */}
         </div>
       </section>
     </>

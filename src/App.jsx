@@ -8,15 +8,17 @@ import {
   EditPost,
   AddPost,
   MyPosts,
+  Landing,
 } from "./pages";
 import { PrivateRoute } from "./utils";
 
-import "./styling/css/styles.min.css";
+import "./styling/scss/styles.scss";
 function App() {
   return (
     <>
       <Switch>
-        <Route exact path={["/", "/login"]} component={Login} />
+        <Route exact path={"/"} component={Landing} />
+        <Route path={"/login"} component={Login} />
         <Route path="/register" component={Register} />
         <PrivateRoute path="/dashboard" component={Dashboard} />
         <PrivateRoute path="/report-issue" component={AddPost} />

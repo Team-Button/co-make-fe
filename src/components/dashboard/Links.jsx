@@ -9,15 +9,15 @@ export function Links() {
       </div>
 
       <div className="col-md-2">
-        <Link to="/dashboard">All Issues</Link>{" "}
+        <Link to="/dashboard">All Issues</Link>
       </div>
 
       <div className="col-md-2">
-        <Link to="/dashboard">Top Issues</Link>{" "}
+        <Link to="/dashboard">Top Issues</Link>
       </div>
 
       <div className="col-md-2">
-        <Link to="/about">Archived</Link>
+        <Link to="/dashboard">Archived</Link>
       </div>
     </div>
   );
