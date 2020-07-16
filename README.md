@@ -4,4 +4,4 @@ Community Cooperation app
 Made using React + Redux
 </br>
 
-Dpeloyed Site : https://co-unity.netlify.app/
+Deployed Site : https://co-unity.netlify.app/
