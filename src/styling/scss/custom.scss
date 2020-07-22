@@ -56,6 +56,16 @@ main {
 
 nav a {
   color: white;
+  &:hover {
+    color: #e1d4d1;
+  }
+}
+
+.landing-img {
+  height: auto;
+  width: auto;
+  max-width: 300px;
+  max-height: 300px;
 }
 
 label {
@@ -64,6 +74,27 @@ label {
 
 .image-wrap img {
   width: 100%;
+}
+
+.btn-reverse {
+  background-color: white;
+  color: #008674;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  user-select: none;
+  border: 1.5px solid #008674;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  &:hover {
+    background-color: #008674;
+    color: white;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3) inset;
+    -webkit-box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3) inset;
+    -moz-box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3) inset;
+  }
 }
 
 .hero {
