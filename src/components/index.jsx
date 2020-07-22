@@ -18,3 +18,4 @@ export * from "./edit-add/Add";
 export * from "./edit-add/Edit";
 
 export * from "./landing/Hero";
+export * from "./landing/About";

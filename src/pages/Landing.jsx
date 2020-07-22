@@ -1,10 +1,11 @@
 import React from "react";
-import { Footer, Hero } from "../components";
+import { Footer, Hero, About } from "../components";
 
 export function Landing() {
   return (
     <>
       <Hero />
+      <About />
       <Footer />
     </>
   );
