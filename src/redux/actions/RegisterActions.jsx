@@ -4,7 +4,7 @@ export const REGISTER_START = "REGISTER_START";
 export const REGISTER_SUCCESS = "REGISTER_SUCCESS";
 export const REGISTER_FAIL = "REGISTER_FAIL";
 
-export const register = (payload) => async (dispatch) => {
+export const registerUser = (payload) => async (dispatch) => {
   dispatch({ type: REGISTER_START });
   try {
     const res = await AxiosWithAuth().post("/auth/register", payload);
