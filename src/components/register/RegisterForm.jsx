@@ -15,7 +15,6 @@ export function RegisterForm(props) {
   const dispatch = useDispatch();
   const onSubmit = (values) => {
     dispatch(registerUser({ props, values }));
-    props.history.push("/login");
   };
   return (
     <>
@@ -24,7 +23,7 @@ export function RegisterForm(props) {
         onSubmit={handleSubmit(onSubmit)}
       >
         <div className="form-group d-flex flex-column justify-content-center align-items-center">
-          <label for="name">Name</label>
+          <label htmlFor="name">Name</label>
           <input
             name="name"
             id="name"
@@ -33,7 +32,7 @@ export function RegisterForm(props) {
             ref={register({ required: true, minLength: 2 })}
           />
           <NameError error={errors.name} />
-          <label for="email">Email</label>
+          <label htmlFor="email">Email</label>
           <input
             name="email"
             id="email"
@@ -42,7 +41,7 @@ export function RegisterForm(props) {
             ref={register({ required: true, pattern: /\S+@\S+\.\S+/ })}
           />
           <EmailError error={errors.email} />
-          <label for="username">Username</label>
+          <label htmlFor="username">Username</label>
           <input
             name="username"
             id="username"
@@ -51,7 +50,7 @@ export function RegisterForm(props) {
             ref={register({ required: true, minLength: 4 })}
           />
           <ErrorMessage error={errors.username} />
-          <label for="password" className="mt-2">
+          <label htmlFor="password" className="mt-2">
             Password
           </label>
           <input
