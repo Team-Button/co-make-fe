@@ -7,15 +7,15 @@ import community from "../../assets/community.svg";
 export function About() {
   return (
     <div id="about" className="container mt-5 text-center ">
-      <div className="row no-gutters mb-5">
-        <div className="col-8 ">
+      <div className="row no-gutters mb-5 align-items-center">
+        <div className="col-sm ">
           <img
             src={town}
-            className="landing-img d-block img-fluid mb-5 mt-4"
+            className="landing-img d-block img-fluid "
             alt="An illustration of a community street"
           />
         </div>
-        <div className="col-4 mt-4">
+        <div className="col-sm ">
           <h2 className="text-primary font-weight-bold ">
             Co-Unity is Awesome
           </h2>
@@ -26,8 +26,8 @@ export function About() {
           </p>
         </div>
       </div>
-      <div className="row no-gutters">
-        <div className="col-6  mt-4 ">
+      <div className="row no-gutters align-items-center">
+        <div className="col-sm">
           <h2 className="text-primary font-weight-bold">
             You can post your issues
           </h2>
@@ -38,7 +38,7 @@ export function About() {
           </p>
         </div>
         <div className="col-2"></div>
-        <div className="col-4 ">
+        <div className="col-sm ">
           <img
             src={task}
             className="landing-img  d-block img-fluid mb-5 mt-4"
@@ -46,15 +46,15 @@ export function About() {
           />
         </div>
       </div>
-      <div className="row no-gutters">
-        <div className="col-8 ">
+      <div className="row no-gutters align-items-center">
+        <div className="col-sm ">
           <img
             src={community}
             className="landing-img  d-block img-fluid mb-5 mt-4"
             alt="An illustration of a community street"
           />
         </div>
-        <div className="col-4  mt-4">
+        <div className="col-sm">
           <h2 className="text-primary font-weight-bold">
             And fix all the problems
           </h2>
