@@ -20,9 +20,9 @@ export function About() {
             Co-Unity is Awesome
           </h2>
           <p>
-            Quis hendrerit dolor magna eget est lorem. Amet massa vitae tortor
-            condimentum lacinia quis. Accumsan in nisl nisi scelerisque eu. Sed
-            enim ut sem viverra.
+            Co-Unity allows you to connect with proactive and like minded people
+            in your community! Bringing you and the awesome people of your
+            community a little bit closer.
           </p>
         </div>
       </div>
@@ -32,9 +32,9 @@ export function About() {
             You can post your issues
           </h2>
           <p>
-            Quis hendrerit dolor magna eget est lorem. Amet massa vitae tortor
-            condimentum lacinia quis. Accumsan in nisl nisi scelerisque eu. Sed
-            enim ut sem viverra.
+            Bring your community concerns to light by posting them on Co-Unity
+            for everyone to see. Let the people of your community voice their
+            concerns and interest in your issue.
           </p>
         </div>
         <div className="col-2"></div>
@@ -59,9 +59,9 @@ export function About() {
             And fix all the problems
           </h2>
           <p>
-            Quis hendrerit dolor magna eget est lorem. Amet massa vitae tortor
-            condimentum lacinia quis. Accumsan in nisl nisi scelerisque eu. Sed
-            enim ut sem viverra.
+            Help improve your community through actions! Not only can you post
+            about your issues but you can also offer solutions and request
+            volunteers to help you fix the important issues in your community.
           </p>
         </div>
       </div>
@@ -71,7 +71,7 @@ export function About() {
       <Link to={"/register"}>
         <button
           style={{ fontSize: "2rem" }}
-          className="w-25 p-3 btn btn-primary font-weight-bold mt-5 mb-5"
+          className=" pr-5 pl-5 pt-3 pb-3 btn btn-primary font-weight-bold mt-5 mb-5"
         >
           Sign Up
         </button>
