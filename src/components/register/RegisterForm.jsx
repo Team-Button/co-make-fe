@@ -12,10 +12,12 @@ import {
 
 export function RegisterForm(props) {
   const { register, errors, handleSubmit } = useForm();
+
   const dispatch = useDispatch();
   const onSubmit = (values) => {
     dispatch(registerUser({ props, values }));
   };
+
   return (
     <>
       <form
