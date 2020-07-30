@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useForm } from "react-hook-form";
 import { registerUser } from "../../redux/actions";
-import Toast from "react-bootstrap/Toast";
+
 import {
   ErrorMessage,
   PasswordError,
@@ -13,9 +13,7 @@ import {
 
 export function RegisterForm(props) {
   const { register, errors, handleSubmit } = useForm();
-  const [show, setShow] = useState(true);
-  const isRegistered = useSelector((state) => state.register.isRegistered);
-  console.log(isRegistered);
+
   const dispatch = useDispatch();
   const onSubmit = (values) => {
     dispatch(registerUser({ props, values }));
