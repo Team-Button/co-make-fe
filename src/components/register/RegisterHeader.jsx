@@ -11,7 +11,7 @@ export function RegisterHeader() {
         <Link className="text-decoration-none" to="/">
           <span className="col-sm counity-name">Co-Unity</span>
         </Link>
-        {isRegistered ? (
+        {!isRegistered ? (
           <Toast onClose={() => setShow(false)} show={show}>
             <Toast.Header className="mr-auto bg-danger text-center text-white font-weight-bold">
               <img
@@ -24,7 +24,7 @@ export function RegisterHeader() {
             <Toast.Body>
               <Link
                 to="/login"
-                className="nav-link text-white bg-danger font-weight-bold"
+                className="nav-link text-center font-weight-bold"
               >
                 CLICK HERE TO LOGIN
               </Link>
