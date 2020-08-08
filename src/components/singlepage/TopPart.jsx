@@ -17,16 +17,15 @@ export default function TopPart({ post, userInfo }) {
 
   const sendVote = async (e) => {
     e.preventDefault();
-
-    const newVote = await AxiosWithAuth().post(`/posts/${post.id}/vote`);
-    setTotalVote(newVote.data);
+    await AxiosWithAuth().post(`/posts/${post.id}/vote`);
+    setTotalVote([...totalVote, { voter_id: userInfo.user.id, post_id: post.id }]);
     setVote(true);
   };
 
   const unVote = async (e) => {
     e.preventDefault();
-    const newVote = await AxiosWithAuth().delete(`/posts/${post.id}/vote`);
-    setTotalVote(newVote.data);
+    await AxiosWithAuth().delete(`/posts/${post.id}/vote`);
+    setTotalVote(totalVote.filter(el => parseInt(el.voter_id) !== userInfo.user.id));
     setVote(false);
   };
 
@@ -62,7 +61,7 @@ export default function TopPart({ post, userInfo }) {
             </h3>
           </div>
           <div className="vote-button">
-            {vote === true ? (
+            {vote ? (
               <button className="btn btn-secondary" onClick={unVote}>
                 Unvote
               </button>
