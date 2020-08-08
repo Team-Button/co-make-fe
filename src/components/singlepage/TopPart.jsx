@@ -61,7 +61,7 @@ export default function TopPart({ post, userInfo }) {
             </h3>
           </div>
           <div className="vote-button">
-            {vote ? (
+            {vote === true ? (
               <button className="btn btn-secondary" onClick={unVote}>
                 Unvote
               </button>
