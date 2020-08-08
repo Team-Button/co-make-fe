@@ -18,7 +18,7 @@ export default function TopPart({ post, userInfo }) {
   const sendVote = async (e) => {
     e.preventDefault();
     await AxiosWithAuth().post(`/posts/${post.id}/vote`);
-    setTotalVote([...totalVote, { voter_id: userInfo.user.id, post_id: post.id }]);
+    setTotalVote([...totalVote, { id: Date.now(), voter_id: userInfo.user.id }]);
     setVote(true);
   };
 
