@@ -6,3 +6,4 @@ export * from "./EditPost";
 export * from "./AddPost";
 export * from "./MyPosts";
 export * from "./Landing";
+export * from "./Team";

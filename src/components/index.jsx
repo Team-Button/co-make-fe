@@ -19,3 +19,6 @@ export * from "./edit-add/Edit";
 
 export * from "./landing/Hero";
 export * from "./landing/About";
+
+export * from "./team/OurTeam";
+export * from "./team/TeamHeader";

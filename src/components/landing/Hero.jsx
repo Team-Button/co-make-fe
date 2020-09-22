@@ -12,7 +12,7 @@ export function Hero() {
           <a href="#about" className="  nav-link font-weight-bold">
             About Co-Unity
           </a>
-          <Link to="/" className=" nav-link font-weight-bold ">
+          <Link to="/team" className=" nav-link font-weight-bold ">
             Meet the Team
           </Link>
           <Link to="/login" className="nav-link font-weight-bold">
