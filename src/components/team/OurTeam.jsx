@@ -28,24 +28,6 @@ export function OurTeam() {
           </p>
         </div>
       </div>
-      {/* <div className="row no-gutters align-items-center">
-        <div className="col-sm">
-          <h2 className="text-primary font-weight-bold">Joshua Gray</h2>
-          <h3 className="text-primary  ">Full Stack Developer</h3>
-          <p>
-            Joshua is not from Thailand and doesn't make great Thai food but has
-            been known to make a mean grilled cheese sandwich!
-          </p>
-        </div>
-        <div className="col-2"></div>
-        <div className="col-sm ">
-          <img
-            src={task}
-            className="landing-img  d-block img-fluid mb-5 mt-4"
-            alt="An illustration of a community street"
-          />
-        </div>
-      </div> */}
       <div className="row no-gutters align-items-center">
         <div className="col-sm ">
           <img
