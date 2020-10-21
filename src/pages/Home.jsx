@@ -1,15 +1,13 @@
 import React from 'react'
-import { HomeHeader, LoginForm, Footer } from '../components'
+import { HomeHeader, Footer } from '../components'
 
-export function Login(props) {
+export function Home() {
     return (
         <>
             <div className="container-sm">
                 <HomeHeader />
-                <LoginForm props={props}/>
             </div>
             <Footer />
         </>
     )
 }
-

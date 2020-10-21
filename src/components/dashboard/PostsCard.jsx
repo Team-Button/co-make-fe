@@ -15,7 +15,7 @@ function PostsCard({ post }) {
       </div>
       <p className="card-text pl-3">{ post.votes.length } votes</p>
       <p className="card-text mb-2 pl-3">
-        {post.description}
+        { post.description }
       </p>
     </div>
   );

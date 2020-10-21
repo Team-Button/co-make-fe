@@ -1,0 +1,27 @@
+[
+    {
+        "id": 1,
+        "platform": "Facebook",
+        "icon": "fab fa-facebook",
+        "link": "#"
+    },
+    {
+        "id": 2,
+        "platform": "Instagram",
+        "icon": "fab fa-instagram",
+        "link": "#"
+    },
+    {
+        "id": 3,
+        "platform": "Twitter",
+        "icon": "fab fa-twitter",
+        "link": "#"
+    },    
+    {
+        "id": 4,
+        "platform": "LinkedIn",
+        "icon": "fab fa-linkedin-in",
+        "link": "#"
+    }
+
+]

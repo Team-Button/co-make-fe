@@ -1,8 +1,9 @@
 export * from "./footer/Footer";
 export * from "./navbar/NavBar";
 export * from "./layout/Layout";
+export * from "./layout/HomeHeader";
+export * from "./home/HomeSection";
 
-export * from "./login/LoginHeader";
 export * from "./login/LoginForm";
 
 export * from "./register/RegisterHeader";

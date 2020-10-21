@@ -1,4 +1,5 @@
 import React from 'react'
+import SocialMediaLinks from "./SocialMedia/SocialMediaLinks"
 
 function FooterInfo() {
     return (
@@ -10,6 +11,7 @@ function FooterInfo() {
                 </section>
                 <section className="connect">
                     <h5><strong>Stay Connected</strong></h5>
+                    <SocialMediaLinks />
                 </section>
             </div>
         </div>

@@ -21,7 +21,7 @@ export function Posts() {
       <div className="card-columns">
       {
         allPosts.posts.map((post, index) => 
-          <PostsCard post={ post } id={ index } userInfo={login} />    
+          <PostsCard post={ post } id={ index } userInfo={ login } />    
       )}
       </div>
     </div>
