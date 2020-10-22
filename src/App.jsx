@@ -9,7 +9,7 @@ import {
   AddPost,
   MyPosts,
   Landing,
-  Home,
+  Team,
 } from "./pages";
 import { PrivateRoute } from "./utils";
 
@@ -19,7 +19,7 @@ function App() {
     <>
       <Switch>
         <Route exact path={"/"} component={Landing} />
-        <Route exact path="/home" component={Home} />
+        <Route path={"/team"} component={Team} />
         <Route path={"/login"} component={Login} />
         <Route path="/register" component={Register} />
         <Route path="/dashboard" component={Dashboard} />

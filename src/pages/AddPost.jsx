@@ -9,7 +9,7 @@ export function AddPost(props) {
           <h2 className="title m-2">Report an Issue</h2>
           <p className="subtitle mt-3">
             There is no better way to improve our beloved neighborhood than
-            letting everybody knows what is going on
+            letting everybody know what is going on
           </p>
         </div>
         <Add props={props} />
