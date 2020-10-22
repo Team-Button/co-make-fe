@@ -7,7 +7,7 @@ export function HomeSection() {
     const [ publicPosts, setPublicPosts ] = useState([])
     const [ error, setError ] = useState()
     useEffect(()=> {
-        axios.get("public/posts")
+        axios.get("api/public")
             .then(response => {
                 setPublicPosts(response.data)
             })
@@ -17,7 +17,7 @@ export function HomeSection() {
             })
     })
     return (
-        <section>
+        <section id="publicPost">
             { publicPosts.map(el => <PostsCard post={el} />) }
         </section>
     )

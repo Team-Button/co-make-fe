@@ -2,6 +2,7 @@
 
 
 **Deployed Site** : https://co-unity.netlify.app/
+**Figma Design** : https://www.figma.com/file/dss4rpzfqy04ZoNOLQj42t/Co-Make?node-id=0%3A1
 
 # Description
 Co-Unity is an application where people can post their issues concerning their community, and everyone can help prioritize issues through votes.
