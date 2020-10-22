@@ -68,12 +68,12 @@ export function About() {
       <h2 className=" font-weight-bold mt-5">
         Get Started with Co-Unity today
       </h2>
-      <Link to={"/register"}>
+      <Link to={"/home"}>
         <button
           style={{ fontSize: "2rem" }}
           className=" pr-5 pl-5 pt-3 pb-3 btn btn-primary font-weight-bold mt-5 mb-5"
         >
-          Sign Up
+          Get Started
         </button>
       </Link>
     </div>

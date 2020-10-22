@@ -23,7 +23,7 @@ export const DELETE_POST_FAIL = "DELETE_POST_FAIL";
 export const getPosts = () => async (dispatch) => {
   dispatch({ type: GET_POSTS_START });
   try {
-    const res = await AxiosWithAuth().get("/posts");
+    const res = await AxiosWithAuth().get("posts");
     dispatch({ type: GET_POSTS_SUCCESS, payload: res.data });
   } catch (error) {
     console.log(error);
@@ -34,7 +34,7 @@ export const getPosts = () => async (dispatch) => {
 export const getPostById = (id) => async (dispatch) => {
   dispatch({ type: GET_POST_START });
   try {
-    const res = await AxiosWithAuth().get(`/posts/${id}`);
+    const res = await AxiosWithAuth().get(`posts/${id}`);
     dispatch({ type: GET_POST_SUCCESS, payload: res.data });
   } catch (error) {
     console.log(error);
@@ -45,7 +45,7 @@ export const getPostById = (id) => async (dispatch) => {
 export const addPost = (payload) => async (dispatch) => {
   dispatch({ type: ADD_POST_START });
   try {
-    const res = await AxiosWithAuth().post("/posts", payload.values);
+    const res = await AxiosWithAuth().post("posts", payload.values);
     console.log(payload.props);
     dispatch({ type: ADD_POST_SUCCESS, payload: res.data });
   } catch (error) {
@@ -57,7 +57,7 @@ export const addPost = (payload) => async (dispatch) => {
 export const editPost = (id, payload) => async (dispatch) => {
   dispatch({ type: EDIT_POST_START });
   try {
-    const res = await AxiosWithAuth().put(`/posts/${id}`, payload.values);
+    const res = await AxiosWithAuth().put(`posts/${id}`, payload.values);
     dispatch({ type: EDIT_POST_SUCCESS, payload: res.data });
   } catch (error) {
     console.log(error);
@@ -68,7 +68,7 @@ export const editPost = (id, payload) => async (dispatch) => {
 export const deletePost = (id) => async (dispatch) => {
   dispatch({ type: DELETE_POST_START });
   try {
-    await AxiosWithAuth().delete(`/posts/${id}`);
+    await AxiosWithAuth().delete(`posts/${id}`);
     dispatch({ type: DELETE_POST_SUCCESS });
   } catch (error) {
     console.log(error);

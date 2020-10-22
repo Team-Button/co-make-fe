@@ -1,26 +1,27 @@
 import React from 'react'
-import { Button } from "react-bootstrap"
+import { Container } from "react-bootstrap"
+import { Link } from "react-router-dom"
 import { HomeHeader, Footer, HomeSection } from '../components'
 
 export function AppHome() {
     return (
         <>
-            <div className="container-sm">
+            <Container sm>
                 <HomeHeader />
-                <HomeSection />
-                <div className="text-center mt-3">
+                <Container sm className="text-center px-5">
+                    <h4 className="m-3">Bring the Important Issue to Spotlight</h4>
                     <p>
-                        These are issues posted by people in our communities. We aim to make sure all voices are heard and that everybody is aware of.
+                        We aim to make sure all voices are heard and that everybody is aware of all the issue.
                     </p>
                     <p> 
-                        You can also be a part of making your community better. Join Co-Unity today and let your community know what's going on!
+                        You can be a part of making your community better. Join Co-Unity today and let your everybody know what's going on!
                     </p>
-                </div>
-                <div className="mx-auto m-3">
-                    <Button variant="primary">Login</Button>{` `}
-                    <Button variant="outline-primary">Sign Up</Button>
-                </div>
-            </div>
+                    <p>
+                        <Link to="/login">Log in</Link> or <Link to="/signup">Sign Up </Link>to see more!
+                    </p>
+                </Container>
+                <HomeSection />
+            </Container>
             <Footer />
         </>
     )
