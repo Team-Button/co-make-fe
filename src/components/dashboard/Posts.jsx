@@ -14,7 +14,7 @@ export function Posts() {
   }, [dispatch]) 
 
   return (
-    <div>
+    <section id="topIssues">
       <div className="text-center mb-4 mt-4">
         <h2>Top Issues</h2>
       </div>
@@ -24,6 +24,6 @@ export function Posts() {
           <PostsCard post={ post } id={ index } userInfo={ login } />    
       )}
       </div>
-    </div>
+    </section>
   );
 }

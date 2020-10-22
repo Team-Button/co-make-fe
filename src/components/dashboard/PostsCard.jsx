@@ -1,23 +1,35 @@
 import React from "react";
-import { Link } from "react-router-dom"
+import { Card } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 function PostsCard({ post }) {
 
 
   return (
-    
-    <div className="card ">
-      <Link to={`/posts/${post.id}`}>
-      <img className="card-img-top" src={post.photo} alt="C" />
-      </Link>
-      <div className="card-body row ">
-        <h4 className="card-title m-2 mt-3 mr-5 pl- pr-1">{post.topic}</h4>
+
+    <Card className="m-3 mx-auto" style={{ maxWidth: '325px', height: '450px;' }}>
+      <div className="overflow-hidden shadow-lg" style={{ height: '200px' }} >
+        <Link to={`/posts/${post.id}`}>
+          <img style={{ width: '100%' }} alt={post.topic} src={post.photo} />
+        </Link>
       </div>
-      <p className="card-text pl-3">{ post.votes.length } votes</p>
-      <p className="card-text mb-2 pl-3">
-        { post.description }
-      </p>
-    </div>
+      <Card.Body>
+        <Card.Title>
+          <Link to={`/posts/${post.id}`}>
+            <h4>{post.topic}</h4>
+          </Link>
+        </Card.Title>
+        <Card.Text>
+          <span className="text-primary">
+            <strong>{post.votes.length}</strong>
+          </span>
+          {` `}votes
+      </Card.Text>
+        <Card.Text>
+          {post.description}
+        </Card.Text>
+      </Card.Body>
+    </Card>
   );
 }
 

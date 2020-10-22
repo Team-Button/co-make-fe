@@ -1,6 +1,7 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
 import {
+  AppHome,
   Login,
   Register,
   Dashboard,
@@ -20,6 +21,7 @@ function App() {
       <Switch>
         <Route exact path={"/"} component={Landing} />
         <Route path={"/team"} component={Team} />
+        <Route path={"/home"} component={AppHome} />
         <Route path={"/login"} component={Login} />
         <Route path="/register" component={Register} />
         <Route path="/dashboard" component={Dashboard} />
