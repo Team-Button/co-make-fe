@@ -23,3 +23,5 @@ export * from "./landing/About";
 
 export * from "./team/OurTeam";
 export * from "./team/TeamHeader";
+
+export * from "./comments/commentBox/CommentBox"

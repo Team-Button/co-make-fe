@@ -13,19 +13,20 @@ export default function TopPart({ post, userInfo }) {
     ) {
       setVote(true);
     }
+    console.log(userInfo)
   }, [totalVote, userInfo.user.id]);
 
-  const sendVote = async (e) => {
-    e.preventDefault();
-    await AxiosWithAuth().post(`/posts/${post.id}/vote`);
+  const sendVote = async () => {
+
+    await AxiosWithAuth().post(`/posts/${post.id}/vote`, { voter_id: userInfo.user.id });
     setTotalVote([...totalVote, { id: Date.now(), voter_id: userInfo.user.id }]);
+    console.log(totalVote)
     setVote(true);
   };
-
-  const unVote = async (e) => {
-    e.preventDefault();
+  const unVote = async () => {
     await AxiosWithAuth().delete(`/posts/${post.id}/vote`);
     setTotalVote(totalVote.filter(el => parseInt(el.voter_id) !== userInfo.user.id));
+    console.log(totalVote)
     setVote(false);
   };
 

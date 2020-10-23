@@ -6,13 +6,13 @@ export function Hero() {
     <div className="hero jumbotron d-flex justify-content-center mb-0">
       <div className="container ">
         <nav className="nav justify-content-between mb-5">
-          <Link to="/" className="  nav-link font-weight-bold ">
+          <Link to="/" className="nav-link font-weight-bold ">
             Home
           </Link>
-          <a href="#about" className="  nav-link font-weight-bold">
+          <a href="#about" className="nav-link font-weight-bold">
             About Co-Unity
           </a>
-          <Link to="/team" className=" nav-link font-weight-bold ">
+          <Link to="/team" className="nav-link font-weight-bold ">
             Meet the Team
           </Link>
           <Link to="/login" className="nav-link font-weight-bold">
@@ -22,7 +22,7 @@ export function Hero() {
         <div className="align-self-center mt-5 pt-4">
           <h1 className="pt-5 ">Co-Unity</h1>
           <p>Create your dream community through unity</p>
-          <Link to={"/register"}>
+          <Link to={"/home"}>
             <button className="btn btn-primary font-weight-bold">
               Get Started
             </button>

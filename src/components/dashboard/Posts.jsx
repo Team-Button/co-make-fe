@@ -14,16 +14,16 @@ export function Posts() {
   }, [dispatch]) 
 
   return (
-    <div>
+    <section id="topIssues">
       <div className="text-center mb-4 mt-4">
         <h2>Top Issues</h2>
       </div>
-      <div className="card-columns">
+      <div className="d-flex flex-wrap">
       {
         allPosts.posts.map((post, index) => 
-          <PostsCard post={ post } id={ index } userInfo={ login } />    
+          <PostsCard key={ post.id } post={ post } id={ index } userInfo={ login } />    
       )}
       </div>
-    </div>
+    </section>
   );
 }

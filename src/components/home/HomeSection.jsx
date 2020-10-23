@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react"
-import axios from "axios"
+import { CardColumns } from "react-bootstrap"
+import { AxiosWithAuth } from '../../utils'
 import PostsCard from "../dashboard/PostsCard"
 
 export function HomeSection() {
@@ -7,18 +8,21 @@ export function HomeSection() {
     const [ publicPosts, setPublicPosts ] = useState([])
     const [ error, setError ] = useState()
     useEffect(()=> {
-        axios.get("public/posts")
+        AxiosWithAuth().get("public")
             .then(response => {
-                setPublicPosts(response.data)
+                console.log(publicPosts)
+                setPublicPosts(response.data.slice(0,3))
             })
             .catch(error => {
                 console.log(error)
                 setError(error.message)
             })
-    })
+    },[])
     return (
-        <section>
-            { publicPosts.map(el => <PostsCard post={el} />) }
+        <section id="publicPost">
+            <div className="d-flex flex-wrap">
+                { publicPosts.map(el => <PostsCard key={el.id} post={el} />) }
+            </div>
         </section>
     )
 }
