@@ -1,6 +1,7 @@
 import React from 'react'
 import TopPart from './TopPart'
 import BottomPart from './BottomPart'
+import Comments from "./Comments"
 import { useSelector } from 'react-redux'
 
 export function SingleIssue({ props, post }) {
@@ -10,6 +11,7 @@ export function SingleIssue({ props, post }) {
             <article className="single-issue">
                 <TopPart userInfo={userInfo} post={post} />
                 <BottomPart props={props} post={post} userInfo={userInfo} />
+                <Comments comments={post.comments}/>
             </article>
         </>
     )
