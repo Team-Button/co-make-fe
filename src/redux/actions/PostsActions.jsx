@@ -4,6 +4,10 @@ export const GET_POSTS_START = "GET_POSTS_START";
 export const GET_POSTS_SUCCESS = "GET_POSTS_SUCCESS";
 export const GET_POSTS_FAIL = "GET_POSTS_FAIL";
 
+export const GET_MY_POSTS_START = "GET_MY_POSTS_START";
+export const GET_MY_POSTS_SUCCESS = "GET_MY_POSTS_SUCCESS";
+export const GET_MY_POSTS_FAIL = "GET_MY_POSTS_FAIL";
+
 export const GET_POST_START = "GET_POST_START";
 export const GET_POST_SUCCESS = "GET_POST_SUCCESS";
 export const GET_POST_FAIL = "GET_POST_FAIL";
@@ -73,5 +77,16 @@ export const deletePost = (id) => async (dispatch) => {
   } catch (error) {
     console.log(error);
     dispatch({ type: DELETE_POST_FAIL, payload: error });
+  }
+};
+
+export const getMyPosts = () => async (dispatch) => {
+  dispatch({ type: GET_MY_POSTS_START });
+  try {
+    const res = await AxiosWithAuth().get("myposts");
+    dispatch({ type: GET_MY_POSTS_SUCCESS, payload: res.data });
+  } catch (error) {
+    console.log(error);
+    dispatch({ type: GET_MY_POSTS_FAIL, payload: error });
   }
 };
